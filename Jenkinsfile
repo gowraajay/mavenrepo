@@ -1,13 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('SCM') {
       steps {
         git(url: 'https://github.com/gowraajay/mavenrepo.git', branch: 'master', credentialsId: 'GitToken')
       }
     }
 
-    stage('Maven') {
+    stage('Build') {
       steps {
         sh 'mvn clean package'
       }

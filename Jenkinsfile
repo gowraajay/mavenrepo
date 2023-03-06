@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('Maven') {
+      steps {
+        build 'Maven Build Life Cycle'
+      }
+    }
+
   }
 }

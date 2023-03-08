@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('Build') {
+      steps {
+        sh 'sh \'/usr/local/src/apache-maven/bin/mvn package\''
+      }
+    }
+
   }
 }

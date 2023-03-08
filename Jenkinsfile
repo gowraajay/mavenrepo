@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'sh \'/usr/local/src/apache-maven/bin/mvn package\''
+        sh '/usr/share/maven/bin/mvn package'
       }
     }
 

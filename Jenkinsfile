@@ -7,13 +7,7 @@ pipeline {
       }
     }
 
-    stage('Build') {
-      steps {
-        sh '/usr/share/maven/bin/mvn package'
-      }
-    }
-
-    stage('QA') {
+    stage('Buil & QA') {
       steps {
         withSonarQubeEnv(envOnly: true, installationName: 'SonarQube', credentialsId: 'SonarToken') {
           sh '/usr/share/maven/bin/mvn clean deploy sonar:sonar'

@@ -15,11 +15,8 @@ pipeline {
 
     stage('QA') {
       steps {
-        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'SonarToken1') {
-          sh '''\'\'$SCANNER_HOME/bin/sonar-scanner -Dsonar.organization=$ORGANIZATION \\
-        -Dsonar.java.binaries=build/classes/java/ \\
-        -Dsonar.projectKey=$PROJECT_NAME \\
-        -Dsonar.sources=.\'\''''
+        withSonarQubeEnv(envOnly: true, installationName: 'SonarQube', credentialsId: 'SonarToken1') {
+          sh '/usr/share/maven/bin/mvn sonar:sonar'
         }
 
       }

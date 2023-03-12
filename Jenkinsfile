@@ -15,7 +15,7 @@ pipeline {
 
     stage('QA') {
       steps {
-        withSonarQubeEnv(envOnly: true, installationName: 'SonarQube', credentialsId: 'SonarToken1') {
+        withSonarQubeEnv(envOnly: true, installationName: 'SonarQube', credentialsId: 'SonarToken') {
           sh '/usr/share/maven/bin/mvn sonar:sonar'
         }
 

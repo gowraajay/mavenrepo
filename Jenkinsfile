@@ -16,7 +16,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sh '''
-scp -v -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/MavenProject_master/target/studentapp-2.5-SNAPSHOT.war 172.31.13.59:/var/lib/tomcat/webapps'''
+mvn sonar:sonar'''
       }
     }
 

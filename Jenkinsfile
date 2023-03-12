@@ -15,11 +15,8 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh '''ssh 172.31.13.59 systemctlfff stop tomcat
-
-scp /var/lib/jenkins/workspace/MavenProject_master/target/studentapp-2.5-SNAPSHOT.war 172.31.13.59:/var/lib/tomcat/webapps
-
-ssh 172.31.13.59 systemctl start tomcat'''
+        sh '''
+scp /var/lib/jenkins/workspace/MavenProject_master/target/studentapp-2.5-SNAPSHOT.war 172.31.13.59:/var/lib/tomcat/webapps'''
       }
     }
 

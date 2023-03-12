@@ -13,10 +13,15 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
+    stage('QA') {
       steps {
-        sh '''
-mvn sonar:sonar'''
+        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'SonarToken1') {
+          sh '''\'\'$SCANNER_HOME/bin/sonar-scanner -Dsonar.organization=$ORGANIZATION \\
+        -Dsonar.java.binaries=build/classes/java/ \\
+        -Dsonar.projectKey=$PROJECT_NAME \\
+        -Dsonar.sources=.\'\''''
+        }
+
       }
     }
 

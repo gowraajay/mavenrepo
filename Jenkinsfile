@@ -32,5 +32,11 @@ pipeline {
       }
     }
 
+    stage('Deploy') {
+      steps {
+        sh '/usr/share/maven/bin/mvn deploy'
+      }
+    }
+
   }
 }

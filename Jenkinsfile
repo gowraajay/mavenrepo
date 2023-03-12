@@ -39,8 +39,19 @@ pipeline {
     }
 
     stage('Mail') {
-      steps {
-        emailext(subject: 'Build is Successful', body: 'Hello Dev, The Build got Success and Artifactory is Deployed into the Nexus Repo. For Reports pls login to the nexus', attachLog: true, to: 'gowraajay@gmail.com')
+      parallel {
+        stage('Mail') {
+          steps {
+            emailext(subject: 'Build is Successful', body: 'Hello Dev, The Build got Success and Artifactory is Deployed into the Nexus Repo. For Reports pls login to the nexus', attachLog: true, to: 'gowraajay@gmail.com')
+          }
+        }
+
+        stage('Deploy Artifact in Tomcat') {
+          steps {
+            sh 'scp /root/workspace/OpenBlue_master 172.31.13.59:/var/lib/tomcat/webapps'
+          }
+        }
+
       }
     }
 

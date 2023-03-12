@@ -48,7 +48,7 @@ pipeline {
 
         stage('Deploy Artifact in Tomcat') {
           steps {
-            sh 'scp /root/workspace/OpenBlue_master 172.31.13.59:/var/lib/tomcat/webapps'
+            sh 'scp /root/workspace/OpenBlue_master/target/studentapp-2.5-SNAPSHOT.war 172.31.34.56:/usr/share/apache-tomcat-9.0.63/webapps'
           }
         }
 

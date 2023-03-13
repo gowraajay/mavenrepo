@@ -20,7 +20,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'scp /root/workspace/oscar_master/target/studentapp-2.5-SNAPSHOT 172.31.34.56:/usr/share/apache-tomcat-9.0.63/webapps '
+        sh 'scp /root/workspace/oscar_master/target/studentapp-2.5-SNAPSHOT.war 172.31.34.56:/usr/share/apache-tomcat-9.0.63/webapps '
       }
     }
 

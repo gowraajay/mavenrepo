@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('SCM') {
       steps {
-        git(url: 'https://github.com/gowraajay/mavenrepo.git', branch: 'Master', credentialsId: 'GitToken1')
+        git(url: 'https://github.com/gowraajay/mavenrepo.git', branch: 'Master', credentialsId: 'Git1')
       }
     }
 

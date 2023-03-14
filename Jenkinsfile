@@ -27,5 +27,11 @@ pipeline {
       }
     }
 
+    stage('Deploy Artifact') {
+      steps {
+        sh '/usr/share/maven/bin/mvn deploy'
+      }
+    }
+
   }
 }

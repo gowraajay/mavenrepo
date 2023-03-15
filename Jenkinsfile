@@ -33,5 +33,11 @@ pipeline {
       }
     }
 
+    stage('Deploying Artifact into Webserver') {
+      steps {
+        sh 'scp /root/workspace/TuePro_master/target/studentapp-2.5-SNAPSHOT.war 172.31.34.56:/usr/share/apache-tomcat-9.0.63/webapps '
+      }
+    }
+
   }
 }

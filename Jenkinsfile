@@ -41,7 +41,7 @@ pipeline {
 
     stage('Mail Notify') {
       steps {
-        emailext(subject: 'Project: TuePro Build Success 10 ', body: 'Hello Dev, The Build is success and your artifact is deployed in Nexus and also we have deployed the artifact in WebServer(Tomcat). Regards, DevOpsTeam', attachLog: true, from: 'gowraajay@gmail.com', replyTo: 'gowraajay@gmail.com', to: 'samba81424.sr@gmail.com')
+        emailext(subject: 'Project: TuePro Build Success 10 ', body: 'Hello Dev, The Build is success and your artifact is deployed in Nexus and also we have deployed the artifact in WebServer(Tomcat). Regards, DevOpsTeam', attachLog: true, from: 'gowraajay@gmail.com', replyTo: 'gowraajay@gmail.com', to: 'gowraajay@gmail.com')
       }
     }
 

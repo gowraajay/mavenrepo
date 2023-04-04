@@ -20,7 +20,7 @@ pipeline {
 
     stage('QA') {
       steps {
-        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'Sonar2', envOnly: true) {
+        withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'SonarToken', envOnly: true) {
           sh '/usr/share/maven/bin/mvn sonar:sonar'
         }
 
